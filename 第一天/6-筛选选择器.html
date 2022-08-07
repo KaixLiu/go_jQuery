@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>欸嘿嘿嘿嘿嘿嘿</li>
+        <li>欸嘿嘿嘿嘿嘿嘿</li>
+        <li>欸嘿嘿嘿嘿嘿嘿</li>
+        <li>欸嘿嘿嘿嘿嘿嘿</li>
+        <li>欸嘿嘿嘿嘿嘿嘿</li>
+        <li>欸嘿嘿嘿嘿嘿嘿</li>
+    </ul>
+    <ol>
+        <li>乒乒乓乓乒乒乓乓</li>
+        <li>乒乒乓乓乒乒乓乓</li>
+        <li>乒乒乓乓乒乒乓乓</li>
+        <li>乒乒乓乓乒乒乓乓</li>
+        <li>乒乒乓乓乒乒乓乓</li>
+        <li>乒乒乓乓乒乒乓乓</li>
+    </ol>
+    <script>
+        $(function(){
+            $('ul>li:first').css("color","red");//第一个li
+
+            $('ul>li:last').css("color","blue");//最后一个li
+
+            $('ol>li:eq(2)').css("color","pink");//下标为2的（第三个li）
+
+            $('ol>li:odd').css("color","red");//索引号奇数列
+
+            $("ul>li:even").css("color","yellow");//索引号偶数列
+        })
+    </script>
+</body>
+</html>

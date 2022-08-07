@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="yy">
+        <div class="bb">
+            <div class="son">大头</div>
+        </div>
+    </div>
+    <div class="box">
+        <p>我是p</p>
+        <div>
+            <p>我是屁</p>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            //1、返回最近一级的父级
+            console.log($(".son").parent());
+
+            //2、返回最近一级子集 类似子代选择器 ul>li
+            $(".box").children("p").css("color","red");
+
+            //3、后代选择器 
+            $(".box").find("p").css("color","pink");
+        })
+    </script>
+</body>
+</html>

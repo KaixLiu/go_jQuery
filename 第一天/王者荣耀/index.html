@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 852px;
+            margin: 100px auto;
+            padding: 10px;
+            background: url(images/bg.png);
+        }
+        li {
+            position: relative;
+            list-style: none;
+            margin-right: 10px;
+            width: 69px;
+            height: 69px;
+            float: left;
+        }
+        ul {
+            margin-left: 5px;
+            height: 69px;
+            overflow: hidden;
+        }
+        img {
+            height: 100%;
+        }
+        .current {
+            width: 224px;
+        }
+        .box ul .current .xs {
+            display: none;
+        }
+        .box ul .current .yc {
+            display: block;
+        }
+        .xs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 69px;
+            height: 69px;
+            border-radius: 5px;
+        }
+        .yc {
+            width: 224px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="current">
+                <a href="#">
+                    <img src="images/m1.jpg" alt="" class="xs">
+                    <img src="images/m.png" alt="" class="yc">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/l1.jpg" alt="" class="xs">
+                    <img src="images/l.png" alt="" class="yc">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/c1.jpg" alt="" class="xs">
+                    <img src="images/c.png" alt="" class="yc">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/w1.jpg" alt="" class="xs">
+                    <img src="images/w.png" alt="" class="yc">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/z1.jpg" alt="" class="xs">
+                    <img src="images/z.png" alt="" class="yc">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/h1.jpg" alt="" class="xs">
+                    <img src="images/h.png" alt="" class="yc">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/t1.jpg" alt="" class="xs">
+                    <img src="images/t.png" alt="" class="yc">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        //css 使大头像绝对定位在长图上面
+        $(function(){
+            $("li").mouseenter(function(){//鼠标经过
+                $(this).stop().animate({//添加动画宽度变为224
+                    width:224
+                    //上一张大头照淡出，下一张的长图淡入
+                }).find(".xs").stop().fadeOut().siblings(".yc").stop().fadeIn();
+                $(this).siblings("li").stop().animate({//其他兄弟
+                    width:69
+                     //上一张大头照淡入，下一张的长图淡出
+                }).find(".xs").stop().fadeIn().siblings(".yc").stop().fadeOut();
+            })
+        })
+    </script>
+</body>
+</html>

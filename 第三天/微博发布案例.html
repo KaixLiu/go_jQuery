@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            width: 700px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            text-align: center;
+        }
+        textarea {
+            margin-top: 20px;
+            width: 500px;
+            height: 200px;
+            outline: none;
+            resize: none;
+        }
+        ul li {
+            display: none;
+            text-align: center;
+        }
+        ul li a {
+            float: right;
+            width: 450px;
+        }
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>微博发布</span>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>发布</button>
+        <ul></ul>
+    </div>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                var li=$("<li></li>");
+                li.html($("textarea").val()+"<a href='javascript:;'>删除</a>");
+                $("ul").prepend(li);
+                li.slideDown();
+                $("textarea").val("");
+            })
+            $("ul").on("click","a",function(){
+                $(this).parent().slideUp(function(){
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</body>
+</html>
